@@ -4,7 +4,7 @@ export async function getAllUrls() {
   let data = null;
   let error = null;
   await axios
-    .get(`http://localhost:3000/url/allUrl`, {
+    .get(`${import.meta.env.VITE_APP_URL}/url/allUrl`, {
       headers: { url: localStorage.getItem("token") },
     })
     .then((res) => {
@@ -22,7 +22,7 @@ export async function deleteUrl(_, url_id) {
   let data = null;
   let error = null;
   await axios
-    .delete(`http://localhost:3000/url/deleteUrl/${url_id}`, {
+    .delete(`${import.meta.env.VITE_APP_URL}/url/deleteUrl/${url_id}`, {
       headers: { url: localStorage.getItem("token") },
     })
     .then((res) => {
@@ -40,7 +40,7 @@ export async function createUrls(_, formData) {
   let data = null;
   let error = null;
   await axios
-    .post(`http://localhost:3000/url/createUrl`, formData, {
+    .post(`${import.meta.env.VITE_APP_URL}/url/createUrl`, formData, {
       headers: { url: localStorage.getItem("token") },
     })
     .then((res) => {
@@ -58,7 +58,7 @@ export async function getLongUrl(_, url_id) {
   let data = null;
   let error = null;
   await axios
-    .get(`http://localhost:3000/url/longUrl/${url_id}`, {
+    .get(`${import.meta.env.VITE_APP_URL}/url/longUrl/${url_id}`, {
       headers: { url: localStorage.getItem("token") },
     })
     .then((res) => {
@@ -76,7 +76,7 @@ export async function getUrl(_, url_id) {
   let data = null;
   let error = null;
   await axios
-    .get(`http://localhost:3000/url/getUrl/${url_id}`, {
+    .get(`${import.meta.env.VITE_APP_URL}/url/getUrl/${url_id}`, {
       headers: { url: localStorage.getItem("token") },
     })
     .then((res) => {

@@ -59,7 +59,7 @@ const Link = () => {
             {url?.title}
           </span>
           <a
-            href={import.meta.env.VITE_APP_URL + "/" + link}
+            href={import.meta.env.VITE_APP_URL_FRONTEND + "/" + link}
             target="_blank"
             className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer"
           >
@@ -83,7 +83,7 @@ const Link = () => {
               variant="ghost"
               onClick={() =>
                 navigator.clipboard.writeText(
-                  import.meta.env.VITE_APP_URL + "/" + link
+                  import.meta.env.VITE_APP_URL_FRONTEND + "/" + link
                 )
               }
             >

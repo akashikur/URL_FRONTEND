@@ -4,7 +4,7 @@ export async function login({ email, password }) {
   let data = null;
   let error = null;
   await axios
-    .post(`http://localhost:3000/user/login`, {
+    .post(`${import.meta.env.VITE_APP_URL}/user/login`, {
       email,
       password,
     })
@@ -22,7 +22,7 @@ export async function signup(_, formData) {
   let data = null;
   let error = null;
   await axios
-    .post(`http://localhost:3000/user/sighUp`, formData)
+    .post(`${import.meta.env.VITE_APP_URL}/user/sighUp`, formData)
     .then((res) => {
       data = res.data;
     })
@@ -37,7 +37,7 @@ export async function getCurrentUser() {
   let data = null;
   let error = null;
   await axios
-    .get(`http://localhost:3000/user/userData`, {
+    .get(`${import.meta.env.VITE_APP_URL}/user/userData`, {
       headers: { url: localStorage.getItem("token") },
     })
     .then((res) => {

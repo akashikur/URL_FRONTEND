@@ -18,7 +18,7 @@ export async function storeClicks(_, { id, originalUrl }) {
     };
 
     await axios
-      .post(`http://localhost:3000/clicks/storeClicks/`, clickObj, {
+      .post(`${import.meta.env.VITE_APP_URL}/clicks/storeClicks/`, clickObj, {
         headers: { url: localStorage.getItem("token") },
       })
       .then(() => {
@@ -36,7 +36,7 @@ export async function getAllClicksForUrls() {
   let error = null;
   try {
     await axios
-      .get(`http://localhost:3000/clicks/getAllClicks`, {
+      .get(`${import.meta.env.VITE_APP_URL}/clicks/getAllClicks`, {
         headers: { url: localStorage.getItem("token") },
       })
       .then((res) => {
@@ -57,7 +57,7 @@ export async function getClicksForUrl(_, url_id) {
   let error = null;
   try {
     await axios
-      .get(`http://localhost:3000/clicks/getUrlClicks/${url_id}`, {
+      .get(`${import.meta.env.VITE_APP_URL}/clicks/getUrlClicks/${url_id}`, {
         headers: { url: localStorage.getItem("token") },
       })
       .then((res) => {
