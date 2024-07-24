@@ -58,9 +58,7 @@ export async function getLongUrl(_, url_id) {
   let data = null;
   let error = null;
   await axios
-    .get(`${import.meta.env.VITE_APP_URL}/url/longUrl/${url_id}`, {
-      headers: { url: localStorage.getItem("token") },
-    })
+    .get(`${import.meta.env.VITE_APP_URL}/url/longUrl/${url_id}`)
     .then((res) => {
       data = res.data.data;
     })

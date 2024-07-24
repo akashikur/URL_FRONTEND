@@ -18,9 +18,7 @@ export async function storeClicks(_, { id, originalUrl }) {
     };
 
     await axios
-      .post(`${import.meta.env.VITE_APP_URL}/clicks/storeClicks/`, clickObj, {
-        headers: { url: localStorage.getItem("token") },
-      })
+      .post(`${import.meta.env.VITE_APP_URL}/clicks/storeClicks/`, clickObj)
       .then(() => {
         window.location.href = originalUrl;
       })
